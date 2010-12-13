@@ -33,7 +33,12 @@ body {
 
 <script type="text/javascript">
 	var KP_LEFT = 37
+	var KP_UP = 38
 	var KP_RIGHT = 39
+	var KP_DOWN = 40
+
+	var KP_PREV = [KP_LEFT, KP_UP]
+	var KP_NEXT = [KP_RIGHT, KP_DOWN]
 
 	function hide_current() {
 		$('#' + current_slide).css('display', 'none');
@@ -74,16 +79,23 @@ body {
 	
 	$(window).keypress(function(event) {
 		key = event.keyCode;
-		if (key == KP_LEFT && current_slide > 1) {
+		if (in_list(key, KP_PREV) && current_slide > 1) {
 			hide_current();
 			current_slide = current_slide - 1;
 			show_current();	
-		} else if (key == KP_RIGHT && current_slide < %INCLUDE: SLIDES_NUM%) {
+		} else if (in_list(key, KP_NEXT) && current_slide < %INCLUDE: SLIDES_NUM%) {
 			hide_current();
 			current_slide = current_slide + 1;
 			show_current();	
 		}
 	});
+
+	function in_list(key, list) {
+		for (var each in list) {
+			if (key == list[each]) return true;
+		}
+		return false;
+	}
 </script>
 
 </body>
