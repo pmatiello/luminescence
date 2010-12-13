@@ -18,3 +18,6 @@ class file_spec():
         assert type(contents) == list
         assert len(contents) == 4
         assert "Square" in contents[0]['contents']
+        assert "Circle" in contents[1]['contents']
+        assert "Triangle" in contents[2]['contents']
+        assert "Pentagon" in contents[3]['contents']
