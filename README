@@ -16,6 +16,18 @@ License
 This package is released under the MIT License. Please read COPYING for details.
 
 
+Dependencies
+------------
+
+markdown2 — http://code.google.com/p/python-markdown2/
+pyyaml    — http://pyyaml.org/
+
+Developers will also need:
+
+nose      — http://somethingaboutorange.com/mrl/projects/nose/0.11.2/
+mockito   — http://code.google.com/p/mockito-python/
+
+
 References
 ----------
 
