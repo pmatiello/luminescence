@@ -1,12 +1,11 @@
 from sys import argv, exit
 from luminescence.presentation.builder import builder
-from luminescence.filesystem.file import file
-from __builtin__ import file as sys_file
+from luminescence.filesystem.yamlfile import yamlfile
 
 def luminescence():
     source_path, output_path, template_path = _parse_arguments()
     
-    source = file(source_path)
+    source = yamlfile(source_path)
     template = _define_template(template_path)
         
     presentation_builder = builder(source.contents(), template)
@@ -16,13 +15,13 @@ def luminescence():
 
 def _define_template(template_path):
     if (template_path):
-        template = sys_file(template_path).read()
+        template = file(template_path).read()
     else:
         template = None
     return template
 
 def _write_output(output_path, html):
-    output = sys_file(output_path, 'w')
+    output = file(output_path, 'w')
     output.write(html)
     output.close()
 

@@ -2,7 +2,7 @@ from __builtin__ import file as sys_file
 from os.path import isfile
 from yaml import load
 
-class file(object):
+class yamlfile(object):
     
     def __init__(self, filename):
         self.filename = filename
