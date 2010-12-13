@@ -9,14 +9,14 @@ def luminescence():
     source = file(source_path)
     template = _define_template(template_path)
         
-    presentation_builder = builder(source, template)
+    presentation_builder = builder(source.contents(), template)
     html = presentation_builder.render()
     
     _write_output(output_path, html)
 
 def _define_template(template_path):
     if (template_path):
-        template = file(template_path)
+        template = sys_file(template_path).read()
     else:
         template = None
     return template

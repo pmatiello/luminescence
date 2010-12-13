@@ -1,15 +1,14 @@
 from luminescence.presentation.slide import slide
 from luminescence.resource.template import default_template
-from yaml import load
 
 class builder(object):
     
-    def __init__(self, presentation_file, template=None):
-        self.data = load(presentation_file.contents())
+    def __init__(self, presentation_data, template=None):
+        self.data = presentation_data
         if (template == None):
             self.template = default_template()
         else:
-            self.template = template.contents()
+            self.template = template
 
     def render(self):
         content_list = []

@@ -15,7 +15,6 @@ class file_spec():
     def should_read_file_contents(self):
         f = file("test/fixtures/presentation.yaml")
         contents = f.contents()
-        assert type(contents) == str
-        assert "contents: |" in contents
-        assert "Square" in contents
-        assert "In geometry, a _square_ is a regular quadrilateral." in contents
+        assert type(contents) == list
+        assert len(contents) == 4
+        assert "Square" in contents[0]['contents']
