@@ -16,6 +16,12 @@ console:
 test:
 	${NOSETESTS} -i should -i spec --verbose --nocapture
 
+dist: clean
+	cd src && ./setup.py sdist
+	cp src/dist/* .
+	rm -rf src/dist
+	rm -rf src/luminescence.egg-info
+
 docs:
 	export PYTHONPATH=${PYTHONPATH} && ${PYTHON} src/luminescence/__init__.py docs/tutorial.yaml docs/tutorial.html
 
@@ -30,6 +36,8 @@ deps:
 
 clean:
 	rm -f test.html
+	rm -f docs/tutorial.html
+	rm -f luminescence*.tar.gz
 	find . -name *.pyc -exec rm {} \;
 
-.PHONY: console test docs testrun clean
+.PHONY: console test dist docs testrun clean
