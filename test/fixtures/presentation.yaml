@@ -4,13 +4,20 @@
     ======
     
     In geometry, a _square_ is a regular quadrilateral.
+    
+    <http://en.wikipedia.org/wiki/Square_(geometry)>
+
 
 - background-color: "#d3e5d6"
+  link-color: navy
   contents: |
     Circle
     ======
     
     In geometry, a _circle_ is a shape consisting of all points on a plane which are equidistant from a given point.
+    
+    <http://en.wikipedia.org/wiki/Circle>
+
 
 - background-color: "#e5dfd3"
   contents: |
@@ -18,10 +25,16 @@
     ========
     
     In geometry, a _triangle_ is a shape with three distinct sides.
+    
+    <http://en.wikipedia.org/wiki/Triangle>
   foreground-color: "#777"
+  link-color: "#f05"
+
 
 - contents: |
     Pentagon
     ========
     
     In geometry, a _pentagon_ is a five-sided polygon.
+
+    <http://en.wikipedia.org/wiki/Pentagon>
