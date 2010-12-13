@@ -1,10 +1,9 @@
-from yaml import load
 from markdown2 import markdown
 
 class slide(object):
     
-    def __init__(self, file):
-        self.data = load(file.contents())
+    def __init__(self, data):
+        self.data = data
         self.contents_html = markdown(self.data['contents'])
         self._load_properties_names()
     

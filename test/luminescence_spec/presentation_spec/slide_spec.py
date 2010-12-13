@@ -1,14 +1,12 @@
 from luminescence.presentation.slide import slide
-from mockito import mock, when
+from yaml import load
 
 class slide_spec():
     
     def setup(self):
-        fl = mock()
-        content_fixture = file("test/_test_set/01 square.yaml").read()
-        when(fl).contents().thenReturn(content_fixture)
+        slide_fixture = load(file("test/fixtures/presentation.yaml").read())[0]
         
-        self.slide = slide(fl)
+        self.slide = slide(slide_fixture)
         
     def should_have_contents(self):
         assert "Square" in self.slide.contents()
@@ -19,5 +17,6 @@ class slide_spec():
         assert "<p>In geometry, a <em>square</em> is a regular quadrilateral.</p>" in self.slide.contents()
     
     def should_have_properties(self):
+        print self.slide.properties()
         assert self.slide.properties() == ['background-color']
         assert self.slide.property('background-color') == '#d2d9e5'

@@ -1,10 +1,11 @@
 from luminescence.presentation.slide import slide
 from luminescence.resource.template import default_template
+from yaml import load
 
 class builder(object):
     
-    def __init__(self, file_set, template=None):
-        self.file_set = file_set
+    def __init__(self, presentation_file, template=None):
+        self.data = load(presentation_file.contents())
         if (template == None):
             self.template = default_template()
         else:
@@ -13,8 +14,8 @@ class builder(object):
     def render(self):
         content_list = []
         slide_list = []
-        for file in self.file_set:
-            sld = slide(file)
+        for each in self.data:
+            sld = slide(each)
             slide_list.append(sld)
             content_list.append(sld.contents())
         content_list = self._include_divs(content_list)
@@ -43,7 +44,7 @@ class builder(object):
     def _include_in_template(self, body):
         html = self.template
         html = html.replace("%INCLUDE: SLIDES%", body)
-        html = html.replace("%INCLUDE: SLIDES_NUM%", str(len(self.file_set)))
+        html = html.replace("%INCLUDE: SLIDES_NUM%", str(len(self.data)))
         return html
     
     def _include_properties(self, html, slides):

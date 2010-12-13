@@ -1,0 +1,26 @@
+- background-color: "#d2d9e5"
+  contents: |
+    Square
+    ======
+    
+    In geometry, a _square_ is a regular quadrilateral.
+
+- background-color: "#d3e5d6"
+  contents: |
+    Circle
+    ======
+    
+    In geometry, a _circle_ is a shape consisting of all points on a plane which are equidistant from a given point.
+
+- background-color: "#e5dfd3"
+  contents: |
+    Triangle
+    ========
+    
+    In geometry, a _triangle_ is a shape with three distinct sides.
+
+- contents: |
+    Pentagon
+    ========
+    
+    In geometry, a _pentagon_ is a five-sided polygon. 

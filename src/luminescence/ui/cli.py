@@ -1,5 +1,4 @@
 from sys import argv, exit
-from luminescence.filesystem.crawler import crawler
 from luminescence.presentation.builder import builder
 from luminescence.filesystem.file import file
 from __builtin__ import file as sys_file
@@ -7,10 +6,10 @@ from __builtin__ import file as sys_file
 def luminescence():
     source_path, output_path, template_path = _parse_arguments()
     
-    file_set = crawler(source_path).files()    
+    source = file(source_path)
     template = _define_template(template_path)
         
-    presentation_builder = builder(file_set, template)
+    presentation_builder = builder(source, template)
     html = presentation_builder.render()
     
     _write_output(output_path, html)

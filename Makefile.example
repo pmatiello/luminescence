@@ -17,7 +17,7 @@ test:
 	${NOSETESTS} -i should -i spec --verbose --nocapture
 
 testrun:
-	export PYTHONPATH=${PYTHONPATH} && ${PYTHON} src/luminescence/__init__.py test/_test_set test.html
+	export PYTHONPATH=${PYTHONPATH} && ${PYTHON} src/luminescence/__init__.py test/fixtures/presentation.yaml test.html
 
 deps:
 	${EASYINSTALL} markdown2
