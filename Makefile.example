@@ -1,0 +1,32 @@
+# tornado-blank-project
+
+# Configuration
+
+PYTHON="/path/to/python"
+EASYINSTALL="/path/to/easy_install"
+NOSETESTS="/path/to/nosetests"
+
+# Targets
+
+PYTHONPATH="`pwd`/src"
+
+console:
+	export PYTHONPATH=${PYTHONPATH} && ${PYTHON}
+
+test:
+	${NOSETESTS} -i should -i spec --verbose --nocapture
+
+testrun:
+	export PYTHONPATH=${PYTHONPATH} && ${PYTHON} src/luminescence/__init__.py test/_test_set test.html
+
+deps:
+	${EASYINSTALL} markdown2
+	${EASYINSTALL} pyyaml
+	${EASYINSTALL} nose
+	${EASYINSTALL} mockito
+
+clean:
+	rm -f test.html
+	find . -name *.pyc -exec rm {} \;
+
+.PHONY: console clean test testrun
