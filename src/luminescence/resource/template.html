@@ -40,6 +40,13 @@ body {
 	}
 
 	function show_current() {
+		set_foreground();
+		set_background();
+		
+		$('#' + current_slide).css('display', 'block');
+	}
+
+	function set_background() {
 		var background_color = properties[current_slide + ".background-color"];
 
 		if (background_color != undefined) {
@@ -47,9 +54,18 @@ body {
 		} else {
 			$('body').css('background-color', 'white');
 		}
-		
-		$('#' + current_slide).css('display', 'block');
 	}
+
+	function set_foreground() {
+		var foreground_color = properties[current_slide + ".foreground-color"];
+
+		if (foreground_color != undefined) {
+			$('body').css('color', foreground_color);
+		} else {
+			$('body').css('color', 'black');
+		}
+	}
+
 	
 	$('document').ready(function() {
 		current_slide = 1; 

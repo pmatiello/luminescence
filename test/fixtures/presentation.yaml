@@ -18,9 +18,10 @@
     ========
     
     In geometry, a _triangle_ is a shape with three distinct sides.
+  foreground-color: "#777"
 
 - contents: |
     Pentagon
     ========
     
-    In geometry, a _pentagon_ is a five-sided polygon. 
+    In geometry, a _pentagon_ is a five-sided polygon.
