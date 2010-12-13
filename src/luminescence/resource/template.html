@@ -49,6 +49,8 @@ img {
 </script>
 
 <script type="text/javascript">
+	var KP_END = 35
+	var KP_HOME = 36
 	var KP_LEFT = 37
 	var KP_UP = 38
 	var KP_RIGHT = 39
@@ -56,6 +58,47 @@ img {
 
 	var KP_PREV = [KP_LEFT, KP_UP]
 	var KP_NEXT = [KP_RIGHT, KP_DOWN]
+
+	var FIRST_SLIDE = 1
+	var LAST_SLIDE = %INCLUDE: SLIDES_NUM%
+
+	$('document').ready(function() {
+		current_slide = FIRST_SLIDE; 
+		show_current();
+	});
+	
+	$(window).keypress(function(event) {
+		key = event.keyCode;
+		if (in_list(key, KP_PREV) && current_slide > FIRST_SLIDE) {
+			go_to(previous_slide())
+		} else if (in_list(key, KP_NEXT) && current_slide < LAST_SLIDE) {
+			go_to(next_slide())	
+		} else if (key == KP_HOME) {
+			go_to(FIRST_SLIDE)
+		} else if (key == KP_END) {
+			go_to(LAST_SLIDE)
+		}
+	});
+
+	function go_to(n) {
+		hide_current();
+		current_slide = n;
+		show_current();	
+	}
+
+	function previous_slide() {
+		if (current_slide > FIRST_SLIDE) {
+			return current_slide - 1
+		}
+		return FIRST_SLIDE;
+	}
+
+	function next_slide() {
+		if (current_slide < LAST_SLIDE) {
+			return current_slide + 1
+		}
+		return NEXT_SLIDE;
+	}
 
 	function hide_current() {
 		$('#' + current_slide).css('display', 'none');
@@ -87,25 +130,6 @@ img {
 			$('body').css('color', 'black');
 		}
 	}
-
-	
-	$('document').ready(function() {
-		current_slide = 1; 
-		show_current();
-	});
-	
-	$(window).keypress(function(event) {
-		key = event.keyCode;
-		if (in_list(key, KP_PREV) && current_slide > 1) {
-			hide_current();
-			current_slide = current_slide - 1;
-			show_current();	
-		} else if (in_list(key, KP_NEXT) && current_slide < %INCLUDE: SLIDES_NUM%) {
-			hide_current();
-			current_slide = current_slide + 1;
-			show_current();	
-		}
-	});
 
 	function in_list(key, list) {
 		for (var each in list) {
