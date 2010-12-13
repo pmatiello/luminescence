@@ -1,0 +1,45 @@
+- background-color: "#ebeff5"
+  contents: |
+    Luminescence
+    ============
+    
+    **Luminescence** is an application for generating HTML presentations from Markdown sources.
+    
+    Project hosting &mdash; <http://code.google.com/p/luminescence/>
+    
+- background-color: "#ebeff5"
+  contents: |
+    Installing
+    ==========
+    
+    > \# easy_install luminescence
+    
+    (requires Python and Setuptools.)
+
+- background-color: "#ebeff5"
+  contents: |
+    Running
+    =======
+    
+    > $ luminescence &lt;source-file.yaml&gt; &lt;output-file.html&gt;
+
+- background-color: "#ebeff5"
+  contents: |
+    Input Format
+    ============
+    
+        - contents: |
+            Slide 1 Header
+            ==============
+        
+            Slide 1 text.
+          
+        - background-color: navy
+          foreground-color: white
+          contents: |
+            Slide 2 Header
+            ==============
+            
+            Slide 2 text.
+            
+            ![Image Alt Text](http://path/to/image.png)

@@ -16,6 +16,9 @@ console:
 test:
 	${NOSETESTS} -i should -i spec --verbose --nocapture
 
+docs:
+	export PYTHONPATH=${PYTHONPATH} && ${PYTHON} src/luminescence/__init__.py docs/tutorial.yaml docs/tutorial.html
+
 testrun:
 	export PYTHONPATH=${PYTHONPATH} && ${PYTHON} src/luminescence/__init__.py test/fixtures/presentation.yaml test.html
 
@@ -29,4 +32,4 @@ clean:
 	rm -f test.html
 	find . -name *.pyc -exec rm {} \;
 
-.PHONY: console clean test testrun
+.PHONY: console test docs testrun clean

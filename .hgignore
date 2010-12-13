@@ -2,3 +2,4 @@ env/
 .pyc
 Makefile
 test.html
+tutorial.html
