@@ -1,15 +1,14 @@
 from luminescence.presentation.builder import builder
-from luminescence.filesystem.file import file
-from __builtin__ import file as sys_file
+from yaml import load
 
 class builder_spec():
     
     def setup(self):
-        self.presentation_fixture = file("test/fixtures/presentation.yaml")
+        self.presentation_fixture = load(file("test/fixtures/presentation.yaml").read())
 
-        template = sys_file("src/luminescence/resource/template.html").read()
+        template = file("src/luminescence/resource/template.html").read()
         
-        bldr = builder(self.presentation_fixture.contents(), template)
+        bldr = builder(self.presentation_fixture, template)
         self.presentation = bldr.render()
     
     def should_render_presentations_from_slides(self):
@@ -30,7 +29,7 @@ class builder_spec():
         assert "</html>" in after
 
     def should_have_a_default_template(self):
-        builder(self.presentation_fixture.contents())
+        builder(self.presentation_fixture)
     
     def should_include_the_number_of_slides_in_output(self):
         assert "LAST_SLIDE = 4" in self.presentation
