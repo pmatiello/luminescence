@@ -1,4 +1,5 @@
 from luminescence.filesystem.yamlfile import yamlfile
+from yaml.error import MarkedYAMLError
 
 class file_spec():
     
@@ -7,7 +8,7 @@ class file_spec():
     
     def should_raise_exception_if_file_does_not_exists(self):
         try:
-            yamlfile("test/fixtures/invalid.yaml")
+            yamlfile("test/fixtures/filedoesnotexist.yaml")
             raise AssertionError("Opened non-existing file")
         except IOError:
             pass
@@ -21,3 +22,11 @@ class file_spec():
         assert "Circle" in contents[1]['contents']
         assert "Triangle" in contents[2]['contents']
         assert "Pentagon" in contents[3]['contents']
+    
+    def should_raise_exception_if_file_contents_is_invalid_yaml(self):
+        f = yamlfile("test/fixtures/invalid.yaml")
+        try:
+            f.contents()
+            raise AssertionError("Returned contents of invalid YAML file")
+        except MarkedYAMLError:
+            pass

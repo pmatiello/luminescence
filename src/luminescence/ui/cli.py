@@ -18,7 +18,9 @@ def luminescence():
     except IOError as e:
         print e
     except MarkedYAMLError as e:
-        print e
+        print "Invalid syntax: %s" % e
+    except KeyError as e:
+        print "Field is missing: %s" % e
 
 def _define_template(template_path):
     if (template_path):
