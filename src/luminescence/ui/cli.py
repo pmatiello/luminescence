@@ -1,17 +1,24 @@
 from sys import argv, exit
 from luminescence.presentation.builder import builder
 from luminescence.filesystem.yamlfile import yamlfile
+from yaml.parser import MarkedYAMLError
 
 def luminescence():
-    source_path, output_path, template_path = _parse_arguments()
+    try:
+        source_path, output_path, template_path = _parse_arguments()
     
-    source = yamlfile(source_path)
-    template = _define_template(template_path)
+        source = yamlfile(source_path)
+        template = _define_template(template_path)
         
-    presentation_builder = builder(source.contents(), template)
-    html = presentation_builder.render()
-    
-    _write_output(output_path, html)
+        presentation_builder = builder(source.contents(), template)
+        html = presentation_builder.render()
+        
+        _write_output(output_path, html)
+        
+    except IOError as e:
+        print e
+    except MarkedYAMLError as e:
+        print e
 
 def _define_template(template_path):
     if (template_path):
