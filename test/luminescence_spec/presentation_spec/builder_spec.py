@@ -17,12 +17,12 @@ class builder_spec():
         assert "Triangle" in self.presentation
     
     def should_render_slide_inside_div_block(self):
-        before, after = self.presentation.split("Square")
+        before, after = self.presentation.split("square")
         assert "<div class='slide' id='1'>" in before
         assert "</div>" in after
     
     def should_render_slide_set_inside_html_skeleton(self):
-        before, after = self.presentation.split("Square")
+        before, after = self.presentation.split("square")
         assert "<html>" in before
         assert "<body>" in before
         assert "</body>" in after
