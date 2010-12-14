@@ -67,7 +67,7 @@ img {
 		show_current();
 	});
 	
-	$(window).keypress(function(event) {
+	$(window).keydown(function(event) {
 		key = event.keyCode;
 		if (in_list(key, KP_PREV) && current_slide > FIRST_SLIDE) {
 			go_to(previous_slide())
