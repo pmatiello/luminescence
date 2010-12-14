@@ -1,4 +1,4 @@
-- background-color: "#ebeff5"
+- background-color: "#ddf"
   link-color: "#0044ff"
   contents: |
     Luminescence
@@ -8,7 +8,7 @@
     
     Project hosting &mdash; <http://code.google.com/p/luminescence/>
     
-- background-color: "#ebeff5"
+- background-color: "#ddf"
   contents: |
     Installing
     ==========
@@ -17,14 +17,14 @@
     
     (requires Python and Setuptools.)
 
-- background-color: "#ebeff5"
+- background-color: "#ddf"
   contents: |
     Running
     =======
     
     > $ luminescence &lt;source-file.yaml&gt; &lt;output-file.html&gt;
 
-- background-color: "#ebeff5"
+- background-color: "#ddf"
   contents: |
     Input Format
     ============
