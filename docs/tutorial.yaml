@@ -6,7 +6,15 @@
     
     **Luminescence** is an application for generating HTML presentations from Markdown sources.
     
-    Project hosting &mdash; <http://code.google.com/p/luminescence/>
+    Project page &mdash; <http://code.google.com/p/luminescence/>
+    
+    <hr />
+    
+    <small>
+    This presentation looks better at your browser's fullscreen mode.
+    
+    Use the arrow keys to navigate.
+    </small>
     
 - background-color: "#ddf"
   contents: |
@@ -26,21 +34,50 @@
 
 - background-color: "#ddf"
   contents: |
-    Input Format
+    Slide Format
     ============
     
-        - contents: |
-            Slide 1 Header
-            ==============
-        
-            Slide 1 text.
-          
-        - background-color: navy
-          foreground-color: white
+        - property1: value 1
+          property2: value 2
           contents: |
-            Slide 2 Header
-            ==============
+            Slide contents.
+              
+    Supported Properties
+    --------------------
+    
+    * background-color
+    * foreground-color
+    * link-color
+    
+    The usage of any of these properties is optional. Only the `contents` field is required.
+
+- background-color: "#ddf"
+  contents: |
+    Presentation Format
+    ===================
+    
+    A presentation is a list of slides like the one below:
+    
+        - background-color: white
+          foreground-color: black
+          link-color: navy
+          contents: |
+            Slide Header
+            ============
             
-            Slide 2 text.
+            Some text and a link: <http://something.com>
+          
+        - contents: |
+            A slide with a image:
             
-            ![Image Alt Text](http://path/to/image.png)
+            ![Image Alt Text](/path/to/image)
+
+- background-color: "#ddf"
+  link-color: "#0044ff"
+  contents: |
+    Further Information
+    ===================
+    
+    Markdown &mdash; <http://daringfireball.net/projects/markdown/>
+    
+    YAML &mdash; <http://en.wikipedia.org/wiki/Yaml>
