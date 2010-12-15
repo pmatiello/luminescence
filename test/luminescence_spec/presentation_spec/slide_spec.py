@@ -17,7 +17,7 @@ class slide_spec():
         assert "<p>In geometry, a <em>square</em> is a regular quadrilateral.</p>" in self.slide.contents()
     
     def should_have_properties(self):
-        assert self.slide.properties() == ['background-color']
+        assert self.slide.properties() == ['background-color', 'transition-time']
         assert self.slide.property('background-color') == '#d2d9e5'
     
     def should_raise_exception_if_contents_field_is_missing(self):
