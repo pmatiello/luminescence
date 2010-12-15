@@ -1,4 +1,5 @@
 from sys import argv, exit
+from codecs import open
 from luminescence.presentation.builder import builder
 from luminescence.filesystem.yamlfile import yamlfile
 from yaml.parser import MarkedYAMLError
@@ -30,7 +31,7 @@ def _define_template(template_path):
     return template
 
 def _write_output(output_path, html):
-    output = file(output_path, 'w')
+    output = open(output_path, 'w', 'utf-8')
     output.write(html)
     output.close()
 

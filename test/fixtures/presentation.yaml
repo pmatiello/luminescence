@@ -6,6 +6,8 @@
     In geometry, a _square_ is a regular quadrilateral.
     
     <http://en.wikipedia.org/wiki/Square_(geometry)>
+    
+    In portuguese: quadrado.
 
 
 - background-color: "#d3e5d6"
@@ -17,6 +19,8 @@
     In geometry, a _circle_ is a shape consisting of all points on a plane which are equidistant from a given point.
     
     <http://en.wikipedia.org/wiki/Circle>
+    
+    In portuguese: círculo.
 
 
 - background-color: "#e5dfd3"
@@ -27,6 +31,8 @@
     In geometry, a _triangle_ is a shape with three distinct sides.
     
     <http://en.wikipedia.org/wiki/Triangle>
+    
+    In portuguese: triângulo.
   foreground-color: "#777"
   link-color: "#f05"
 
@@ -38,3 +44,5 @@
     In geometry, a _pentagon_ is a five-sided polygon.
 
     <http://en.wikipedia.org/wiki/Pentagon>
+    
+    In portuguese: pentágono.
