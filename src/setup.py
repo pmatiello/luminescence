@@ -10,7 +10,7 @@ except ImportError as ie:
 
 # Startup
 appname = "luminescence"
-appversion = "0.1"
+appversion = "0.2"
 
 setup(
     name = appname,
