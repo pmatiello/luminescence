@@ -69,7 +69,7 @@ hr {
 
 	$('document').ready(function() {
 		current_slide = FIRST_SLIDE; 
-		show_current();
+		go_to(current_slide);
 	});
 	
 	$(window).keydown(function(event) {
@@ -85,12 +85,6 @@ hr {
 		}
 	});
 
-	function go_to(n) {
-		hide_current();
-		current_slide = n;
-		show_current();	
-	}
-
 	function previous_slide() {
 		if (current_slide > FIRST_SLIDE) {
 			return current_slide - 1
@@ -105,46 +99,36 @@ hr {
 		return NEXT_SLIDE;
 	}
 
-	function hide_current() {
-		$('#' + current_slide).css('display', 'none');
+	function go_to(slide) {
+		transition_duration = property(slide, 'transition-time', 0) / 2;
+		$('#' + current_slide).fadeOut(transition_duration, function() {
+			current_slide = slide;
+			set_foreground();
+			set_linkcolor();
+			set_background();
+			$('#' + current_slide).fadeIn(transition_duration);
+		});
 	}
 
-	function show_current() {
-		set_foreground();
-		set_linkcolor();
-		set_background();
-		
-		$('#' + current_slide).css('display', 'block');
+	function property(slide, key, default_value) {
+		value = properties[slide + "." + key];
+		if (value != undefined) return value
+		else return default_value			
 	}
 
 	function set_foreground() {
-		var foreground_color = properties[current_slide + ".foreground-color"];
-
-		if (foreground_color != undefined) {
-			$('body').css('color', foreground_color);
-		} else {
-			$('body').css('color', 'black');
-		}
+		var foreground_color = property(current_slide, 'foreground-color', 'black')
+		$('body').css('color', foreground_color);
 	}
 
 	function set_linkcolor() {
-		var link_color = properties[current_slide + ".link-color"];
-
-		if (link_color != undefined) {
-			$('a').css('color', link_color);
-		} else {
-			$('a').css('color', 'inherit');
-		}
+		var link_color = property(current_slide, 'link-color', 'inherit')
+		$('a').css('color', link_color);
 	}
 
 	function set_background() {
-		var background_color = properties[current_slide + ".background-color"];
-
-		if (background_color != undefined) {
-			$('body').css('background-color', background_color);
-		} else {
-			$('body').css('background-color', 'white');
-		}
+		var background_color = property(current_slide, 'background-color', 'white')
+		$('body').css('background-color', background_color);
 	}
 
 	function in_list(key, list) {
