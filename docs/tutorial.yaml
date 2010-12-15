@@ -70,7 +70,7 @@
         - contents: |
             A slide with a image:
             
-            ![Image Alt Text](/path/to/image)
+            ![Image Alt Text](/path/to/image.png)
 
 - background-color: "#ddf"
   link-color: "#0044ff"
