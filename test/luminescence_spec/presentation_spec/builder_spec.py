@@ -35,4 +35,4 @@ class builder_spec():
         assert "LAST_SLIDE = 4" in self.presentation
     
     def should_render_properties_in_output(self):
-        assert "background-color" in self.presentation
+        assert "1.background-color" in self.presentation

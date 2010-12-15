@@ -18,10 +18,11 @@ class slide_spec():
     
     def should_have_properties(self):
         assert self.slide.properties() == ['background-color', 'transition-time']
-        assert self.slide.property('background-color') == '#d2d9e5'
+        assert self.slide.property('background-color') == "#d2d9e5"
+        assert self.slide.property('transition-time') == 200
     
     def should_raise_exception_if_contents_field_is_missing(self):
-        invalid_data = load("not-contents: iss")
+        invalid_data = load("not-contents: anything")
         try:
             slide(invalid_data)
             raise AssertionError("Slide built without a contents field")
