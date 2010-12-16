@@ -45,11 +45,11 @@
     Supported Properties
     --------------------
     
-    * background-color
-    * foreground-color
-    * link-color
-    * fade-in
-    * fade-out
+    * `background-color`
+    * `foreground-color`
+    * `link-color`
+    * `fade-in`
+    * `fade-out`
     
     The usage of any of these properties is optional. Only the `contents` field is required.
 
