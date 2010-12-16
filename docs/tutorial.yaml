@@ -1,4 +1,4 @@
-- background-color: "#ddf"
+- background-color: "#e0e0ea"
   link-color: "#0044ff"
   contents: |
     Luminescence
@@ -16,7 +16,7 @@
     Use the arrow keys to navigate.
     </small>
     
-- background-color: "#ddf"
+- background-color: "#e0e0ea"
   contents: |
     Installing
     ==========
@@ -25,14 +25,14 @@
     
     (requires Python and Setuptools.)
 
-- background-color: "#ddf"
+- background-color: "#e0e0ea"
   contents: |
     Running
     =======
     
     > $ luminescence &lt;source-file.yaml&gt; &lt;output-file.html&gt;
 
-- background-color: "#ddf"
+- background-color: "#e0e0ea"
   contents: |
     Slide Format
     ============
@@ -53,7 +53,7 @@
     
     The usage of any of these properties is optional. Only the `contents` field is required.
 
-- background-color: "#ddf"
+- background-color: "#e0e0ea"
   contents: |
     Presentation Format
     ===================
@@ -74,7 +74,7 @@
             
             ![Image Alt Text](/path/to/image.png)
 
-- background-color: "#ddf"
+- background-color: "#e0e0ea"
   link-color: "#0044ff"
   contents: |
     Further Information
