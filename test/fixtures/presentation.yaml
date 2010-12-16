@@ -1,5 +1,6 @@
 - background-color: "#d2d9e5"
-  transition-time: 200
+  fade-in: 500
+  fade-out: 500
   contents: |
     Square
     ======
@@ -12,8 +13,9 @@
 
 
 - background-color: "#d3e5d6"
-  transition-time: 200
   link-color: navy
+  fade-in: 500
+  fade-out: 500
   contents: |
     Circle
     ======
@@ -26,7 +28,8 @@
 
 
 - background-color: "#e5dfd3"
-  transition-time: 200
+  fade-in: 500
+  fade-out: 500
   contents: |
     Triangle
     ========

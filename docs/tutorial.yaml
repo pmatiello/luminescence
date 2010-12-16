@@ -48,7 +48,8 @@
     * background-color
     * foreground-color
     * link-color
-    * transition-time
+    * fade-in
+    * fade-out
     
     The usage of any of these properties is optional. Only the `contents` field is required.
 

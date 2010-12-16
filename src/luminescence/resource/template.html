@@ -100,13 +100,14 @@ hr {
 	}
 
 	function go_to(slide) {
-		transition_duration = property(slide, 'transition-time', 0) / 2;
-		$('#' + current_slide).fadeOut(transition_duration, function() {
+		fade_out_duration = property(current_slide, 'fade-out', 0) / 2;
+		fade_in_duration = property(slide, 'fade-in', 0) / 2;
+		$('#' + current_slide).fadeOut(fade_out_duration, function() {
 			current_slide = slide;
 			set_foreground();
 			set_linkcolor();
 			set_background();
-			$('#' + current_slide).fadeIn(transition_duration);
+			$('#' + current_slide).fadeIn(fade_in_duration);
 		});
 	}
 
