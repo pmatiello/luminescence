@@ -1,3 +1,6 @@
+# Copyright (c) 2010 Pedro Matiello <pmatiello@gmail.com>
+# -*- coding: utf-8 -*-
+
 from __builtin__ import file as sys_file
 from os.path import isfile
 from yaml import load

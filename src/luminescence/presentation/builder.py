@@ -1,3 +1,6 @@
+# Copyright (c) 2010 Pedro Matiello <pmatiello@gmail.com>
+# -*- coding: utf-8 -*-
+
 from luminescence.presentation.slide import slide
 from luminescence.resource.template import default_template
 

@@ -1,4 +1,8 @@
-#Wed Dec 15 18:40:31 BRST 2010
+#Fri Dec 17 21:05:40 BRST 2010
 eclipse.preferences.version=1
+encoding//src/luminescence/filesystem/yamlfile.py=utf-8
+encoding//src/luminescence/presentation/builder.py=utf-8
+encoding//src/luminescence/presentation/slide.py=utf-8
+encoding//src/luminescence/resource/template.py=utf-8
 encoding//src/luminescence/ui/cli.py=utf-8
 encoding//src/setup.py=utf-8

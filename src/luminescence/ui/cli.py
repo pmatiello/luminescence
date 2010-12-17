@@ -1,3 +1,6 @@
+# Copyright (c) 2010 Pedro Matiello <pmatiello@gmail.com>
+# -*- coding: utf-8 -*-
+
 from sys import argv, exit
 from codecs import open
 from luminescence.presentation.builder import builder

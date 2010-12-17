@@ -1,3 +1,6 @@
+# Copyright (c) 2010 Pedro Matiello <pmatiello@gmail.com>
+# -*- coding: utf-8 -*-
+
 from markdown2 import markdown
 
 class slide(object):
