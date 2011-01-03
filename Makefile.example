@@ -8,8 +8,6 @@ NOSETESTS="/path/to/nosetests"
 
 # Targets
 
-PYTHONPATH="`pwd`/src"
-
 console:
 	export PYTHONPATH=${PYTHONPATH} && ${PYTHON}
 
@@ -22,7 +20,7 @@ dist: clean
 	rm -rf src/dist
 	rm -rf src/luminescence.egg-info
 
-docs:
+tutorial:
 	export PYTHONPATH=${PYTHONPATH} && ${PYTHON} src/luminescence/__init__.py docs/tutorial.yaml docs/tutorial.html
 
 testrun:
@@ -40,4 +38,4 @@ clean:
 	rm -f luminescence*.tar.gz
 	find . -name *.pyc -exec rm {} \;
 
-.PHONY: console test dist docs testrun clean
+.PHONY: console test dist tutorial testrun clean
