@@ -44,7 +44,7 @@ def _parse_arguments():
     elif (len(argv) == 3):
         command, source_path, output_path, template_path = argv + [None]      #@UnusedVariable
     else:
-        print "Syntax: %s <source directory> <output file> [<template file>]" % argv[0]
+        print "Syntax: %s <source file> <output file> [<template file>]" % argv[0]
         exit(1)
     return source_path, output_path, template_path
 
