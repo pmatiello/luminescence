@@ -5,6 +5,7 @@
 PYTHON="/path/to/python"
 EASYINSTALL="/path/to/easy_install"
 NOSETESTS="/path/to/nosetests"
+PYTHONPATH="src/"
 
 # Targets
 
